@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: api-demo
+  namespace: argocd
+spec:
+  project: app-project
+  source:
+    repoURL: https://github.com/Dumindudasun/local-gitops-platform.git
+    targetRevision: main
+    path: gitops/apps/api/overlays/demo
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: demo
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    syncOptions:
+      - CreateNamespace=true
