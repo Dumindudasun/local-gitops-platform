@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: app-project
+  namespace: argocd
+spec:
+  description: API and worker applications project
+
+  sourceRepos:
+    - 'https://github.com/Dumindudasun/local-gitops-platform.git'
+
+  destinations:
+    - namespace: dev
+      server: https://kubernetes.default.svc
+    - namespace: demo
+      server: https://kubernetes.default.svc
+
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
