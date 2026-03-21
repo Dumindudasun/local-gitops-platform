@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: frontend-project
+  namespace: argocd
+spec:
+  description: Frontend applications project
+
+  sourceRepos:
+    - 'https://github.com/Dumindudasun/local-gitops-platform.git'
+
+  destinations:
+    - namespace: dev
+      server: https://kubernetes.default.svc
+    - namespace: demo
+      server: https://kubernetes.default.svc
+
+  clusterResourceWhitelist:
+    - group: '*'
+      kind: '*'
