@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: frontend
-  namespace: demo
+  
 spec:
   replicas: 4
   revisionHistoryLimit: 2
