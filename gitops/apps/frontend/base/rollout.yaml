@@ -1,0 +1,57 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: frontend
+  namespace: demo
+spec:
+  replicas: 4
+  revisionHistoryLimit: 2
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          image: nginx:1.25
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: /
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 5
+
+  strategy:
+    canary:
+      stableService: frontend-stable
+      canaryService: frontend-canary
+      maxSurge: 1
+      maxUnavailable: 0
+
+      analysis:
+        templates:
+          - templateName: frontend-success-rate
+        args:
+          - name: service-name
+            value: frontend-canary
+
+      steps:
+        - analysis:
+            templates:
+              - templateName: frontend-smoke-test
+
+        - setWeight: 10
+        - pause: {}
+
+        - setWeight: 30
+        - pause: {}
+
+        - setWeight: 60
+        - pause: {}
+
+        - setWeight: 100

@@ -5,3 +5,8 @@ resources:
   - deployment.yaml
   - service.yaml
   - ingress.yaml
+  - service-stable.yaml
+  - service-canary.yaml
+  - rollout.yaml
+  - analysis-template-smoke.yaml
+  - analysis-template-prometheus.yaml  

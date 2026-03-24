@@ -11,3 +11,6 @@ namespace: demo
 replicas:
   - name: frontend
     count: 2
+
+patches:
+  - path: patch-image.yaml    
