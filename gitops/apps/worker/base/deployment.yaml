@@ -5,6 +5,7 @@ metadata:
   labels:
     app: worker
 spec:
+  serviceAccountName: worker-sa
   replicas: 1
   selector:
     matchLabels:

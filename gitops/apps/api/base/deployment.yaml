@@ -5,6 +5,7 @@ metadata:
   labels:
     app: api
 spec:
+  serviceAccountName: api-sa
   replicas: 1
   selector:
     matchLabels:

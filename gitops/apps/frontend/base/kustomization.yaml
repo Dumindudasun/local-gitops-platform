@@ -5,4 +5,5 @@ resources:
   - service-stable.yaml
   - service-canary.yaml
   - rollout.yaml
-  - analysis-template-smoke.yaml  
+  - analysis-template-smoke.yaml
+  - serviceaccount.yaml  

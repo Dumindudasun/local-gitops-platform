@@ -4,6 +4,7 @@ metadata:
   name: frontend
   
 spec:
+  serviceAccountName: frontend-sa
   replicas: 4
   revisionHistoryLimit: 2
   selector:
