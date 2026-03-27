@@ -5,7 +5,7 @@ metadata:
   labels:
     app: api
 spec:
-  serviceAccountName: api-sa
+
   replicas: 1
   selector:
     matchLabels:
@@ -15,6 +15,7 @@ spec:
       labels:
         app: api
     spec:
+      serviceAccountName: api-sa
       containers:
         - name: api
           image: nginx:1.27

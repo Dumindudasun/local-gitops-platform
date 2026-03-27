@@ -5,7 +5,7 @@ metadata:
   labels:
     app: worker
 spec:
-  serviceAccountName: worker-sa
+  
   replicas: 1
   selector:
     matchLabels:
@@ -15,6 +15,7 @@ spec:
       labels:
         app: worker
     spec:
+      serviceAccountName: worker-sa
       containers:
         - name: worker
           image: busybox:1.36
