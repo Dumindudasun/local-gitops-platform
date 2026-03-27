@@ -1,0 +1,12 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+  - default-deny.yaml
+  - allow-ingress-nginx-to-frontend.yaml
+  - allow-frontend-to-api.yaml
+  - frontend-egress-to-api.yaml
+  - allow-api-to-worker.yaml
+  - api-egress-to-worker.yaml
+  - allow-dns-egress.yaml
+  - allow-monitoring.yaml
