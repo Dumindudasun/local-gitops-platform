@@ -4,17 +4,47 @@ metadata:
   name: app-project
   namespace: argocd
 spec:
-  description: API and worker applications project
+  description: Restricted project for frontend, api, and worker applications
 
   sourceRepos:
     - 'https://github.com/Dumindudasun/local-gitops-platform.git'
 
   destinations:
-    - namespace: dev
-      server: https://kubernetes.default.svc
     - namespace: demo
       server: https://kubernetes.default.svc
 
   clusterResourceWhitelist:
-    - group: '*'
-      kind: '*'
+    - group: ''
+      kind: Namespace
+    - group: networking.k8s.io
+      kind: NetworkPolicy
+
+  namespaceResourceWhitelist:
+    - group: ''
+      kind: Service
+    - group: ''
+      kind: ServiceAccount
+    - group: ''
+      kind: ConfigMap
+    - group: ''
+      kind: Secret
+    - group: apps
+      kind: Deployment
+    - group: networking.k8s.io
+      kind: Ingress
+    - group: argoproj.io
+      kind: Rollout
+    - group: argoproj.io
+      kind: AnalysisTemplate
+    - group: rbac.authorization.k8s.io
+      kind: Role
+    - group: rbac.authorization.k8s.io
+      kind: RoleBinding
+    - group: networking.k8s.io
+      kind: NetworkPolicy
+
+  namespaceResourceBlacklist:
+    - group: rbac.authorization.k8s.io
+      kind: ClusterRole
+    - group: rbac.authorization.k8s.io
+      kind: ClusterRoleBinding
