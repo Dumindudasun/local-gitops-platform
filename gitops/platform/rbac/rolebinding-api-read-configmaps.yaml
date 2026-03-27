@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: api-read-configmaps-binding
+  namespace: demo
+subjects:
+  - kind: ServiceAccount
+    name: api-sa
+    namespace: demo
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: api-read-configmaps
