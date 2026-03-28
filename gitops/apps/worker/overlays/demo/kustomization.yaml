@@ -4,9 +4,9 @@ kind: Kustomization
 resources:
   - ../../base
 
-namePrefix: dev-
+namePrefix: demo-
 
-namespace: dev
+namespace: demo
 
 replicas:
   - name: worker
