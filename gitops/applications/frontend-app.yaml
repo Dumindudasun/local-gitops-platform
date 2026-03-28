@@ -4,7 +4,7 @@ metadata:
   name: frontend-demo
   namespace: argocd
 spec:
-  project: frontend-project
+  project: app-projec
   source:
     repoURL: https://github.com/Dumindudasun/local-gitops-platform.git
     targetRevision: main
