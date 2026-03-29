@@ -1,0 +1,12 @@
+# gitops/bootstrap/kustomization.yaml
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+  - ../projects/app-project.yaml
+  - ../applications/frontend-app.yaml
+  - ../applications/api-app.yaml
+  - ../applications/worker-app.yaml
+
+  # Platform policies applied *as plain manifests* (or make them their own Application)
+  - ../platform/network-policies/kustomization.yaml
+  - ../platform/rbac/kustomization.yaml
