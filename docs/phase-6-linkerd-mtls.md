@@ -11,6 +11,20 @@ This phase adds service-to-service security to the platform using Linkerd.
 
 ### Security outcome
 Traffic between meshed services is automatically encrypted and authenticated with mTLS, providing east-west traffic protection inside the cluster.
+# Preflight checks
+linkerd check --pre
+
+# Install control plane
+linkerd install | kubectl apply -f -
+linkerd check
+
+# Install viz extension (metrics + dashboard components)
+linkerd viz install | kubectl apply -f -
+linkerd check
+
+# Enable proxy injection for your app namespace(s)
+kubectl create namespace demo || true
+kubectl annotate namespace demo linkerd.io/inject=enabled --overwrite
 
 ### Evidence
 - `linkerd check --proxy -n demo`
