@@ -38,9 +38,8 @@ This project demonstrates the ability to:
 
 ## 🏗️ Architecture Diagram
 
-> Save your generated image as: `docs/architecture.png`
+<img width="1536" height="1024" alt="ChatGPT Image Mar 30, 2026, 04_18_02 AM" src="https://github.com/user-attachments/assets/b70367d5-e8f1-47cf-954b-e8584400d9cc" />
 
-![Architecture](docs/)
 
 ---
 
