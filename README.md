@@ -48,13 +48,16 @@ This project demonstrates the ability to:
 ### 🔁 GitOps Deployment
 - Declarative infrastructure stored in Git  
 - Automated sync & self-healing using Argo CD  
+<img width="1862" height="866" alt="agrocd application" src="https://github.com/user-attachments/assets/0baaa465-5b55-4aaa-8268-2e407f95aa40" /><img width="1537" height="851" alt="agrocd frontend" src="https://github.com/user-attachments/assets/542f77db-b0aa-4bd1-b095-91d7aa226402" />
+
 
 ---
 
 ### 🚦 Progressive Delivery
 - Canary deployments using Argo Rollouts  
 - Traffic shifting: 10% → 30% → 60% → 100%  
-- Pause and controlled promotion  
+- Pause and controlled promotion
+<img width="1011" height="747" alt="rollout" src="https://github.com/user-attachments/assets/ab5f2b79-0804-4ad6-be83-9aa6c62d1647" />
 
 ---
 
@@ -69,7 +72,9 @@ This project demonstrates the ability to:
 ### 🔐 Security
 - RBAC and ServiceAccounts  
 - NetworkPolicies (default deny model)  
-- mTLS using Linkerd  
+- mTLS using Linkerd
+ ![kinkrd achreenshot](https://github.com/user-attachments/assets/ffa4c592-3158-4c09-8344-266f16c2abd5)
+
 
 ---
 
@@ -79,7 +84,9 @@ This project demonstrates the ability to:
 - Tracks:
   - CPU / Memory  
   - Pod restarts  
-  - Application health  
+  - Application health
+    ![grafna roolut pass](https://github.com/user-attachments/assets/d771c1d2-70a2-4cd1-8480-303acfb3bdbf)
+
 
 ---
 
