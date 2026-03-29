@@ -6,4 +6,6 @@ resources:
   - service-canary.yaml
   - rollout.yaml
   - analysis-template-smoke.yaml
-  - serviceaccount.yaml  
+  - serviceaccount.yaml
+  - analysis-template-prometheus.yaml
+  
